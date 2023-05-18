@@ -13,7 +13,7 @@ public class SelectService : MonoBehaviour
     public CanvasGroup canvasGroup;
     public float lerpDuration = 1f;
     private float currentLerpTime;
-    public bool CanChange=true;
+    public bool CanChange = true;
     private bool isLerping = false;
     private bool StartLerp = false;
     private bool StopLerp = false;
@@ -69,7 +69,7 @@ public class SelectService : MonoBehaviour
                 Control.SetActive(false);
                 isLerping = false;
                 StopLerp = false;
-                CanChange= true;
+                CanChange = true;
             }
         }
     }
@@ -78,16 +78,13 @@ public class SelectService : MonoBehaviour
     {
         if (!HackathonB.activeSelf && CanChange)
         {
-           Backgrounds1.transform.position = new Vector3(0f, 0f, 0f);
-            HackathonB.SetActive(true);
-            TeamB.SetActive(false);
-            HelpB.SetActive(false);
-            ArticlesB.SetActive(false);
+            Backgrounds1.transform.position = new Vector3(0f, 0f, 0f);
+
+            Control.SetActive(true);
             StartLerp = true;
             currentLerpTime = 0f;
-            Control.SetActive(true);
-
             CanChange = false;
+            Invoke("ShowHack", 2f);
             Invoke("Deactivate", 5f);
         }
     }
@@ -97,15 +94,13 @@ public class SelectService : MonoBehaviour
         if (!TeamB.activeSelf && CanChange)
         {
             Backgrounds1.transform.position = new Vector3(0f, 0f, 0f);
-            HackathonB.SetActive(false);
-            TeamB.SetActive(true);
-            HelpB.SetActive(false);
-            ArticlesB.SetActive(false);
+
             StartLerp = true;
             currentLerpTime = 0f;
             CanChange = false;
             Control.SetActive(true);
-            Invoke("Deactivate", 5f);   
+            Invoke("ShowHack1", 2f);
+            Invoke("Deactivate", 5f);
         }
     }
 
@@ -115,15 +110,12 @@ public class SelectService : MonoBehaviour
         {
             Backgrounds1.transform.position = new Vector3(0f, 0f, 0f);
 
-            HackathonB.SetActive(false);
-            TeamB.SetActive(false);
-            HelpB.SetActive(true);
-            ArticlesB.SetActive(false);
+
             StartLerp = true;
             currentLerpTime = 0f;
             CanChange = false;
             Control.SetActive(true);
-
+            Invoke("ShowHack2", 2f);
             Invoke("Deactivate", 5f);
         }
     }
@@ -134,19 +126,43 @@ public class SelectService : MonoBehaviour
         {
             Backgrounds1.transform.position = new Vector3(0f, 0f, 0f);
 
-            HackathonB.SetActive(false);
-            TeamB.SetActive(false);
-            HelpB.SetActive(false);
-            ArticlesB.SetActive(true);
             StartLerp = true;
             currentLerpTime = 0f;
             Control.SetActive(true);
-
             CanChange = false;
+            Invoke("ShowHack3", 2f);
             Invoke("Deactivate", 5f);
         }
     }
+    public void ShowHack()
+    {
+        HackathonB.SetActive(true);
+        TeamB.SetActive(false);
+        HelpB.SetActive(false);
+        ArticlesB.SetActive(false);
+    }
+    public void ShowHack1()
+    {
+        HackathonB.SetActive(false);
+        TeamB.SetActive(true);
+        HelpB.SetActive(false);
+        ArticlesB.SetActive(false);
+    }
+    public void ShowHack2()
+    {
+        HackathonB.SetActive(false);
+        TeamB.SetActive(false);
+        HelpB.SetActive(true);
+        ArticlesB.SetActive(false);
+    }
+    public void ShowHack3()
+    {
 
+        HackathonB.SetActive(false);
+        TeamB.SetActive(false);
+        HelpB.SetActive(false);
+        ArticlesB.SetActive(true);
+    }
     public void Deactivate()
     {
         StopLerp = true;
