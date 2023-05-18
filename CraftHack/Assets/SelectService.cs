@@ -88,7 +88,7 @@ public class SelectService : MonoBehaviour
             Control.SetActive(true);
 
             CanChange = false;
-            Invoke("Deactivate", 5f);
+            Invoke("Deactivate", 1f);
         }
     }
 
@@ -105,7 +105,7 @@ public class SelectService : MonoBehaviour
             currentLerpTime = 0f;
             CanChange = false;
             Control.SetActive(true);
-            Invoke("Deactivate", 5f);   
+            Invoke("Deactivate", 1f);   
         }
     }
 
@@ -124,7 +124,7 @@ public class SelectService : MonoBehaviour
             CanChange = false;
             Control.SetActive(true);
 
-            Invoke("Deactivate", 5f);
+            Invoke("Deactivate", 1f);
         }
     }
 
@@ -143,7 +143,7 @@ public class SelectService : MonoBehaviour
             Control.SetActive(true);
 
             CanChange = false;
-            Invoke("Deactivate", 5f);
+            Invoke("Deactivate", 1f);
         }
     }
 
