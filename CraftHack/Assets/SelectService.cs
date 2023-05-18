@@ -84,8 +84,10 @@ public class SelectService : MonoBehaviour
             StartLerp = true;
             currentLerpTime = 0f;
             CanChange = false;
+
             Invoke("ShowHack", 2f);
             Invoke("Deactivate", 5f);
+
         }
     }
 
@@ -99,8 +101,10 @@ public class SelectService : MonoBehaviour
             currentLerpTime = 0f;
             CanChange = false;
             Control.SetActive(true);
+
             Invoke("ShowHack1", 2f);
             Invoke("Deactivate", 5f);
+
         }
     }
 
@@ -115,8 +119,10 @@ public class SelectService : MonoBehaviour
             currentLerpTime = 0f;
             CanChange = false;
             Control.SetActive(true);
+
             Invoke("ShowHack2", 2f);
             Invoke("Deactivate", 5f);
+
         }
     }
 
@@ -130,8 +136,10 @@ public class SelectService : MonoBehaviour
             currentLerpTime = 0f;
             Control.SetActive(true);
             CanChange = false;
+
             Invoke("ShowHack3", 2f);
             Invoke("Deactivate", 5f);
+
         }
     }
     public void ShowHack()
